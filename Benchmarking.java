@@ -11,6 +11,7 @@ import java.util.Scanner;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Objects;
+import java.util.concurrent.TimeUnit;
 
 public class Benchmarking
 {
@@ -115,8 +116,9 @@ public class Benchmarking
 		//endTimer = System.nanoTime();
 	    endTime = System.nanoTime();
 		//display time
+      long durationInMs = TimeUnit.MICROSECONDS.convert(endTime - startTime, TimeUnit.NANOSECONDS);
             System.out.println("The time it took to place " + value +" into the"
-                    + " Linked list was " + (endTime - startTime) );
+                    + " Linked list was " + (durationInMs) );
 		
 		
 	}
